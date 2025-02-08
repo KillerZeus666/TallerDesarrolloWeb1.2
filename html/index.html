@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PosteArt - Tienda</title>
     <link rel="stylesheet" href="../css/styles.css">
-    <script defer src="script.js"></script>
+    <script defer src="../scripts/agregar.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,9 +17,27 @@
             <img src="../images/posteArt.png" alt="PosteArt Logo" class="logo">
             <h1>PosteArt</h1>
         </div>
-        <div class="cart-container">
+     <!-- Contenedor para el carrito -->
+        <div class="cart-container" id="cart-container">
             <button id="cart-button">🛒 <span id="cart-count">0</span></button>
+            <div id="cart-content" class="cart-content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Imagen</th>
+                            <th>Producto</th>
+                            <th>Precio</th>
+                            <th>Cantidad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Los productos se agregarán aquí -->
+                    </tbody>
+                </table>
+            </div>
         </div>
+        
+
     </header>
 
     <main>
@@ -52,7 +70,7 @@
                     </div>
                     <div class="precio">
                         <p>$20.000</p>
-                        <button class="agregar-carrito">Agregar al Carrito</button>
+                        <button class="agregar-carrito" onclick="agregarAlCarrito(new Producto('Poster Stranger Things', '40x60', 'Resistente al agua', 'Edicion limitada', 'poster1.jpg', 20000))">Agregar al Carrito</button>
                     </div>
                 </div>
         
@@ -193,9 +211,7 @@
                 </div>
             </div>
         </section>
-
         <h2>AGREGAR ARTÍCULO</h2>
-
         <section class="agregar-articulo">
             <div class="form-wrapper">
                 <form id="add-item-form" class="form-container">
@@ -236,6 +252,7 @@
             </div>
         </section>
         
+        
     </main>
 
     <footer>
@@ -247,4 +264,21 @@
             <div class="footer-links">
                 <h3>Síguenos</h3>
                 <a href="#" target="_blank">
-                    <img src="../images/facebook.png" alt="
+                    <img src="../images/facebook.png" alt="Facebook">
+                </a>
+                <a href="#" target="_blank">
+                    <img src="../images/instagram.png" alt="Instagram">
+                </a>
+            </div>
+            <div class="footer-contact">
+                <h3>Contacto</h3>
+                <p>Email: contacto@posteart.com</p>
+                <p>Tel: +57 300 123 4567</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 PosteArt. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

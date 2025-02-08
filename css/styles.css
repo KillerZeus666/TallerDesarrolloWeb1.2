@@ -279,3 +279,19 @@ h2 {
 .button-group button:hover {
     background-color: #ff5722;
 }
+
+
+#cart-content {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+#cart-container:hover #cart-content {
+    display: block;
+}
