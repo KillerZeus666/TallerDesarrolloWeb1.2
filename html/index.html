@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PosteArt - Tienda</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script defer src="script.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Almendra+SC&family=Croissant+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="../images/posteArt.png" alt="PosteArt Logo" class="logo">
+            <h1>PosteArt</h1>
+        </div>
+        <div class="cart-container">
+            <button id="cart-button">🛒 <span id="cart-count">0</span></button>
+            <div id="cart-modal" class="hidden">
+                <h2>Carrito de Compras</h2>
+                <ul id="cart-items"></ul>
+                <button id="clear-cart">Vaciar Carrito</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="info">
+            <div class="info-text">
+                <h2>Sobre Nosotros</h2>
+                <p>
+                    Bienvenido a PosteArt, la mejor tienda para encontrar arte único y personalizado. 
+                    Nos especializamos en piezas exclusivas y originales.
+                </p>
+            </div>
+            <div class="info-image">
+                <img src="tienda.jpg" alt="Nuestra Tienda">
+            </div>
+        </section>
+
+        <section class="tienda">
+            <h2>TIENDA</h2>
+            <div class="productos" id="productos"></div>
+        </section>
+
+        <section class="agregar-articulo">
+            <h2>Agregar Artículo</h2>
+            <form id="add-item-form">
+                <input type="text" id="nombre" placeholder="Nombre del artículo" required>
+                <input type="number" id="precio" placeholder="Precio" required>
+                <input type="url" id="imagen" placeholder="URL de la imagen" required>
+                <input type="text" id="atributo1" placeholder="Atributo 1">
+                <input type="text" id="atributo2" placeholder="Atributo 2">
+                <input type="text" id="atributo3" placeholder="Atributo 3">
+                <button type="submit">Agregar</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-info">
+                <h3>PosteArt</h3>
+                <p>Arte único y personalizado a solo un clic.</p>
+            </div>
+            <div class="footer-links">
+                <h3>Síguenos</h3>
+                <a href="#" target="_blank">
+                    <img src="../images/facebook.png" alt="Facebook">
+                </a>
+                <a href="#" target="_blank">
+                    <img src="../images/instagram.png" alt="Instagram">
+                </a>
+            </div>
+            <div class="footer-contact">
+                <h3>Contacto</h3>
+                <p>Email: contacto@posteart.com</p>
+                <p>Tel: +57 300 123 4567</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 PosteArt. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
