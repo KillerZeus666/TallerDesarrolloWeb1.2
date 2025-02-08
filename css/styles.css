@@ -1,3 +1,4 @@
+/* Body */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -5,6 +6,7 @@ body {
     background-color: #f4f4f4;
 }
 
+/* Header */
 header {
     display: flex;
     justify-content: space-between;
@@ -35,15 +37,17 @@ header {
     cursor: pointer;
 }
 
+/* Info Section */
 .info {
     display: flex;
     align-items: center; 
     justify-content: center; 
-    text-align: left;
+    text-align: center;
     gap: 20px; 
     padding: 20px;
     background: white;
 }
+
 .info-text {
     max-width: 600px;
     margin-bottom: 20px; 
@@ -55,32 +59,7 @@ header {
     border-radius: 10px;
 }
 
-.tienda {
-    text-align: center;
-    padding: 20px;
-}
-
-.productos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-.producto {
-    background: white;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 200px;
-    text-align: center;
-}
-
-.producto img {
-    width: 100%;
-    border-radius: 10px;
-}
-
+/* Add Item Section */
 .agregar-articulo {
     text-align: center;
     padding: 20px;
@@ -98,17 +77,18 @@ input, button {
     width: 80%;
     max-width: 300px;
 }
-/*Fuente del logo*/
+
+/* Logo Font */
 .logo-container h1 {
     font-family: 'Croissant One', sans-serif;
 }
 
-
+/* Footer */
 footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background:linear-gradient(to right, #00b09b, #96c93d);
+    background: linear-gradient(to right, #00b09b, #96c93d);
     padding: 10px 20px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -150,4 +130,87 @@ footer {
     border-top: 1px solid #555;
     padding-top: 10px;
     font-size: 14px;
+}
+
+/* Store Section */
+.tienda {
+    text-align: center;
+    padding: 40px;
+}
+
+.productos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+.producto {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;  /* Reduce el espacio interior */
+    display: flex;
+    flex-direction: column;  /* Asegura que los elementos dentro de .producto estén apilados verticalmente */
+    justify-content: space-between;
+    height: auto;  /* Ajusta la altura automáticamente para que sea más pequeña */
+    max-width: 280px; /* Limita el ancho máximo de la tarjeta */
+}
+
+.producto img {
+    width: 100%;
+    height: auto;  /* Asegura que la imagen mantenga sus proporciones */
+    border-radius: 8px;
+}
+
+/* Product Info */
+.info {
+    text-align: left;
+    margin-bottom: auto;
+    display: flex;
+    flex-direction: column;  /* Asegura que h3 y ul se apilen verticalmente */
+}
+
+.info h3 {
+    text-align: center;
+    font-size: 16px;  /* Ajusta el tamaño del título */
+    margin-bottom: 8px;  /* Reduce el espacio entre el título y la lista */
+}
+
+/* Product Info */
+.info ul {
+    list-style: none;
+    padding: 0;
+    font-size: 13px;
+    color: #555;
+    margin-top: 0;  /* Elimina cualquier margen superior */
+    margin-bottom: 4px;  /* Reduce el margen inferior */
+}
+
+/* Price Section */
+.precio {
+    display: flex;
+    flex-direction: column;  /* Apila los elementos de manera vertical */
+    align-items: flex-end;  /* Alinea el contenido a la izquierda (por si acaso) */
+    font-weight: bold;
+    font-size: 16px;  /* Ajusta el tamaño del precio */
+    margin-top: 0px;  /* Reduce el espacio entre la lista y el precio */
+    gap: 8px;  /* Espacio entre el precio y el botón */
+}
+
+/* Add to Cart Button */
+.agregar-carrito {
+    background: #ff5722;
+    color: white;
+    border: none;
+    padding: 8px 12px;  /* Reduce el tamaño del botón */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 14px;  /* Ajusta el tamaño del texto en el botón */
+    margin: 0 auto;  /* Esto centra el botón dentro de su contenedor */
+}
+
+.agregar-carrito:hover {
+    background: #e64a19;
 }
