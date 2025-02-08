@@ -193,19 +193,49 @@
                 </div>
             </div>
         </section>
-        
+
+        <h2>AGREGAR ARTÍCULO</h2>
+
         <section class="agregar-articulo">
-            <h2>Agregar Artículo</h2>
-            <form id="add-item-form">
-                <input type="text" id="nombre" placeholder="Nombre del artículo" required>
-                <input type="number" id="precio" placeholder="Precio" required>
-                <input type="url" id="imagen" placeholder="URL de la imagen" required>
-                <input type="text" id="atributo1" placeholder="Atributo 1">
-                <input type="text" id="atributo2" placeholder="Atributo 2">
-                <input type="text" id="atributo3" placeholder="Atributo 3">
-                <button type="submit">Agregar</button>
-            </form>
+            <div class="form-wrapper">
+                <form id="add-item-form" class="form-container">
+                    <div class="form-group">
+                        <label for="nombre">Nombre del artículo</label>
+                        <input type="text" id="nombre" placeholder="Nombre del artículo" required>
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="atributo1">Dimensiones</label>
+                        <input type="text" id="atributo1" placeholder="40x60">
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="atributo2">Resistencia</label>
+                        <input type="text" id="atributo2" placeholder="Agua">
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="atributo3">Exclusividad</label>
+                        <input type="text" id="atributo3" placeholder="Edición especial">
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="imagen">Imágen</label>
+                        <input type="url" id="imagen" placeholder="URL de la imagen" required>
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="precio">Precio</label>
+                        <input type="number" id="precio" placeholder="Precio" required>
+                    </div>
+        
+                    <div class="form-group button-group">
+                        <button type="submit">Agregar artículo</button>
+                    </div>
+                </form>
+            </div>
         </section>
+        
     </main>
 
     <footer>
