@@ -37,26 +37,67 @@ header {
     cursor: pointer;
 }
 
-/* Info Section */
+
+
+/* Contenedor del carrusel */
+/* Estilo para el contenedor general */
 .info {
     display: flex;
-    align-items: center; 
-    justify-content: center; 
-    text-align: center;
-    gap: 20px; 
+    justify-content: space-between;
+    align-items: center;
+    margin: 50px auto;
     padding: 20px;
-    background: white;
 }
 
+/* Estilo para la columna de texto */
 .info-text {
-    max-width: 600px;
-    margin-bottom: 20px; 
+    flex: 1;
+    max-width: 50%;
 }
 
-.info-image img {
-    width: 90%; 
-    max-width: 400px;
+/* Estilo para la columna de la imagen y mini carrusel */
+.info-image {
+    flex: 1;
+    max-width: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilo para el mini carrusel */
+.mini-carrusel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* Estilo para las imágenes del mini carrusel */
+.mini-img {
+    width: 300px;
+    height: auto;
     border-radius: 10px;
+}
+
+/* Estilo de los botones del mini carrusel */
+.mini-prev, .mini-next {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+/* Alineación de los botones */
+.mini-prev {
+    margin-right: 8px;
+}
+
+.mini-next {
+    margin-left: 8px;
 }
 
 

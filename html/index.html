@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PosteArt - Tienda</title>
     <link rel="stylesheet" href="../css/styles.css">
-    <script defer src="../scripts/agregar.js"></script>
+    <script defer src="../scripts/script.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -47,9 +47,18 @@
                 </p>
             </div>
             <div class="info-image">
-                <img src="../images/posters.jpg" alt="Nuestra Tienda">
+                <!-- Mini Carrusel de imágenes -->
+                <div class="mini-carrusel">
+                    <button class="mini-prev" onclick="cambiarImagen(-1)">&#10094;</button>
+                    <img src="../images/cascada1.jpg" class="mini-img" alt="Cascada 1">
+                    <button class="mini-next" onclick="cambiarImagen(1)">&#10095;</button>
+                </div>
             </div>
         </section>
+        
+        
+        
+        
 
         <section class="tienda">
             <h2>TIENDA</h2>
@@ -92,4 +101,28 @@
         </section>
     </main>
 </body>
+<footer>
+    <div class="footer-container">
+        <div class="footer-info">
+            <h3>Sobre PosteArt</h3>
+            <p>Tu tienda online de arte único y personalizado. Ofrecemos piezas exclusivas y originales, hechas a mano con pasión.</p>
+        </div>
+        <div class="footer-links">
+            <h3>Enlaces Rápidos</h3>
+            <a href="#">Inicio</a>
+            <a href="#">Tienda</a>
+            <a href="#">Contacto</a>
+            <a href="#">Política de Privacidad</a>
+        </div>
+        <div class="footer-contact">
+            <h3>Contacto</h3>
+            <p>Email: contacto@posteart.com</p>
+            <p>Teléfono: +123 456 789</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 PosteArt. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
 </html>
