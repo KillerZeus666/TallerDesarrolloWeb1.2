@@ -38,7 +38,6 @@ header {
 }
 
 /* Estilo para el contenedor general */
-/* Estilo para el contenedor general */
 .info {
     display: flex;
     justify-content: space-between;
@@ -50,7 +49,7 @@ header {
 /* Estilo para la columna de texto */
 .info-text {
     flex: 1;
-    margin-right: 20px; /* Esto da un poco de espacio entre el texto y la imagen */
+    margin-right: 20px; 
 }
 
 /* Estilo para la columna de la imagen y mini carrusel */
@@ -125,17 +124,17 @@ input, button {
     background: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 10px;  /* Reduce el espacio interior */
+    padding: 10px; 
     display: flex;
-    flex-direction: column;  /* Asegura que los elementos dentro de .producto estén apilados verticalmente */
+    flex-direction: column; 
     justify-content: space-between;
-    height: auto;  /* Ajusta la altura automáticamente para que sea más pequeña */
-    max-width: 280px; /* Limita el ancho máximo de la tarjeta */
+    height: auto;  
+    max-width: 280px; 
 }
 
 .producto img {
     width: 100%;
-    height: auto;  /* Asegura que la imagen mantenga sus proporciones */
+    height: auto;  
     border-radius: 8px;
 }
 
@@ -144,13 +143,13 @@ input, button {
     text-align: left;
     margin-bottom: auto;
     display: flex;
-    flex-direction: column;  /* Asegura que h3 y ul se apilen verticalmente */
+    flex-direction: column; 
 }
 
 .info h3 {
     text-align: center;
-    font-size: 16px;  /* Ajusta el tamaño del título */
-    margin-bottom: 8px;  /* Reduce el espacio entre el título y la lista */
+    font-size: 16px;  
+    margin-bottom: 8px;  
 }
 
 /* Product Info */
@@ -159,23 +158,20 @@ input, button {
     padding: 0;
     font-size: 13px;
     color: #555;
-    margin-top: 0;  /* Elimina cualquier margen superior */
-    margin-bottom: 4px;  /* Reduce el margen inferior */
+    margin-top: 0;  
+    margin-bottom: 4px;  
 }
 
 /* Price Section */
 .precio {
     display: flex;
-    flex-direction: column;  /* Apila los elementos de manera vertical */
-    align-items: flex-end;  /* Alinea el contenido a la izquierda (por si acaso) */
+    flex-direction: column; 
+    align-items: flex-end; 
     font-weight: bold;
-    font-size: 16px;  /* Ajusta el tamaño del precio */
-    margin-top: 0px;  /* Reduce el espacio entre la lista y el precio */
-    gap: 8px;  /* Espacio entre el precio y el botón */
+    font-size: 16px;  
+    margin-top: 0px;  
+    gap: 8px;
 }
-
-
-
 
 /* Botón de agregar al carrito */
 .agregar-carrito {
@@ -198,15 +194,15 @@ input, button {
 
 .agregar-articulo {
     display: flex;
-    justify-content: center; /* Centra el contenido */
-    align-items: center; /* Centra el contenido verticalmente */
+    justify-content: center; 
+    align-items: center;
     padding: 20px;
     width: 100%;
 }
 
 .form-wrapper {
     width: 100%;
-    max-width: 400px; /* Ajusta el tamaño máximo del formulario */
+    max-width: 400px; 
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 8px;
@@ -220,7 +216,7 @@ h2 {
 
 .form-container {
     display: flex;
-    flex-direction: column; /* Asegura que los elementos estén en columna */
+    flex-direction: column;
 }
 
 .form-group {
@@ -253,7 +249,7 @@ h2 {
 
 .button-group {
     display: flex;
-    justify-content: flex-end; /* Alinea el botón a la derecha */
+    justify-content: flex-end; 
     width: 100%;
 }
 
@@ -312,7 +308,7 @@ footer {
 }
 
 .footer-logo-img {
-    width: 120px; /* Ajusta el tamaño según lo necesites */
+    width: 120px; 
 }
 
 .footer-categories {
@@ -340,7 +336,7 @@ footer {
 }
 
 .footer-categories a:hover {
-    color: #ffcc00; /* Cambia el color al pasar el cursor */
+    color: #ffcc00; 
 }
 
 .footer-info, .footer-contact {

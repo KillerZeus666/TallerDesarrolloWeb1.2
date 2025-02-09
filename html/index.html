@@ -1,142 +1,147 @@
+<!-- Taller 1. HTML, CSS y JS-->
+<!-- Katheryn Sofía Guasca, Desarrollo Web. -->
+
+<!-- Parte N.2 Taller. Tienda digital-->
+
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PosteArt - Tienda</title>
-    <link rel="stylesheet" href="../css/styles.css">
-    <script defer src="../scripts/script.js"></script>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PosteArt - Tienda</title>
+        <link rel="stylesheet" href="../css/styles.css">
+        <script defer src="../scripts/script.js"></script>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Almendra+SC&family=Croissant+One&display=swap" rel="stylesheet">
-</head>
-<body>
-    <header>
-        <div class="logo-container">
-            <img src="../images/posteArt.png" alt="PosteArt Logo" class="logo">
-            <h1>PosteArt</h1>
-        </div>
-
-        <div class="cart-container" id="cart-container">
-            <button id="cart-button">🛒 <span id="cart-count">0</span></button>
-            <div id="cart-content" class="cart-content">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Imagen</th>
-                            <th>Producto</th>
-                            <th>Precio</th>
-                            <th>Cantidad</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- Los productos se agregarán aquí dinámicamente -->
-                    </tbody>
-                </table>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Almendra+SC&family=Croissant+One&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <div class="logo-container">
+                <img src="../images/posteArt.png" alt="PosteArt Logo" class="logo">
+                <h1>PosteArt</h1>
             </div>
-        </div>
-    </header>
 
-    <main>
-        <section class="info">
-            <div class="info-text">
-                <h2>Sobre Nosotros</h2>
-                <p>
-                    Bienvenido a PosteArt, la mejor tienda para encontrar arte único y personalizado. 
-                    Nos especializamos en piezas exclusivas y originales.
-                </p>
-            </div>
-            <div class="info-image">
-                <!-- Mini Carrusel de imágenes -->
-                <div class="mini-carrusel">
-                    <button class="mini-prev" onclick="cambiarImagen(-1)">&#10094;</button>
-                    <img src="../images/cascada1.jpg" class="mini-img" alt="Cascada 1">
-                    <button class="mini-next" onclick="cambiarImagen(1)">&#10095;</button>
+            <div class="cart-container" id="cart-container">
+                <button id="cart-button">🛒 <span id="cart-count">0</span></button>
+                <div id="cart-content" class="cart-content">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Imagen</th>
+                                <th>Producto</th>
+                                <th>Precio</th>
+                                <th>Cantidad</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Los productos se agregarán aquí dinámicamente -->
+                        </tbody>
+                    </table>
                 </div>
             </div>
-        </section>
+        </header>
 
-        <!-- Sección de tienda -->
-        <section class="tienda">
-            <h2>TIENDA</h2>
-            <div class="productos">
-                <!-- Aquí se agregarán los productos dinámicamente -->
-            </div>
-        </section>
+        <main>
+            <section class="info">
+                <div class="info-text">
+                    <h2>Sobre Nosotros</h2>
+                    <p>
+                        Bienvenido a PosteArt, la mejor tienda para encontrar arte único y personalizado. 
+                        Nos especializamos en piezas exclusivas y originales.
+                    </p>
+                </div>
+                <div class="info-image">
+                    <!-- Mini Carrusel de imágenes -->
+                    <div class="mini-carrusel">
+                        <button class="mini-prev" onclick="cambiarImagen(-1)">&#10094;</button>
+                        <img src="../images/cascada1.jpg" class="mini-img" alt="Cascada 1">
+                        <button class="mini-next" onclick="cambiarImagen(1)">&#10095;</button>
+                    </div>
+                </div>
+            </section>
 
-        <h2>AGREGAR ARTÍCULO</h2>
-        <section class="agregar-articulo">
-            <div class="form-wrapper">
-                <form id="add-item-form" class="form-container">
-                    <div class="form-group">
-                        <label for="nombre">Nombre del artículo</label>
-                        <input type="text" id="nombre" placeholder="Nombre del artículo" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="atributo1">Dimensiones</label>
-                        <input type="text" id="atributo1" placeholder="40x60">
-                    </div>
-                    <div class="form-group">
-                        <label for="atributo2">Resistencia</label>
-                        <input type="text" id="atributo2" placeholder="Agua">
-                    </div>
-                    <div class="form-group">
-                        <label for="atributo3">Exclusividad</label>
-                        <input type="text" id="atributo3" placeholder="Edición especial">
-                    </div>
-                    <div class="form-group">
-                        <label for="imagen">Imagen</label>
-                        <input type="url" id="imagen" placeholder="URL de la imagen" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="precio">Precio</label>
-                        <input type="number" id="precio" placeholder="Precio...">
-                    </div>
-                    <button type="submit">Agregar Producto</button>
-                </form>
-            </div>
-        </section>
-    </main>
+            <!-- Sección de tienda -->
+            <section class="tienda">
+                <h2>TIENDA</h2>
+                <div class="productos">
+                    <!-- Aquí se agregarán los productos dinámicamente -->
+                </div>
+            </section>
 
-    <footer>
-        <div class="footer-container">
-            <!-- Logo -->
-            <div class="footer-logo">
-                <img src="../images/posteArt.png" alt="PosteArt Logo" class="footer-logo-img">
-            </div>
+            <h2>AGREGAR ARTÍCULO</h2>
+            <section class="agregar-articulo">
+                <div class="form-wrapper">
+                    <form id="add-item-form" class="form-container">
+                        <div class="form-group">
+                            <label for="nombre">Nombre del artículo</label>
+                            <input type="text" id="nombre" placeholder="Nombre del artículo" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="atributo1">Dimensiones</label>
+                            <input type="text" id="atributo1" placeholder="40x60">
+                        </div>
+                        <div class="form-group">
+                            <label for="atributo2">Resistencia</label>
+                            <input type="text" id="atributo2" placeholder="Agua">
+                        </div>
+                        <div class="form-group">
+                            <label for="atributo3">Exclusividad</label>
+                            <input type="text" id="atributo3" placeholder="Edición especial">
+                        </div>
+                        <div class="form-group">
+                            <label for="imagen">Imagen</label>
+                            <input type="url" id="imagen" placeholder="URL de la imagen" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="precio">Precio</label>
+                            <input type="number" id="precio" placeholder="Precio...">
+                        </div>
+                        <button type="submit">Agregar Producto</button>
+                    </form>
+                </div>
+            </section>
+        </main>
 
-            <!-- Categorías -->
-            <div class="footer-categories">
+        <footer>
+            <div class="footer-container">
+                <!-- Logo -->
+                <div class="footer-logo">
+                    <img src="../images/posteArt.png" alt="PosteArt Logo" class="footer-logo-img">
+                </div>
+
+                <!-- Categorías -->
                 <div class="footer-categories">
-                    <h3>Categorías</h3>
-                    <ul>
-                        <li>Series</li>
-                        <li>Películas</li>
-                        <li>Equipos de Fútbol</li>
-                        <li>Artistas Musicales</li>
-                        <li>Mascotas</li>
-                    </ul>
-                </div>                
+                    <div class="footer-categories">
+                        <h3>Categorías</h3>
+                        <ul>
+                            <li>Series</li>
+                            <li>Películas</li>
+                            <li>Equipos de Fútbol</li>
+                            <li>Artistas Musicales</li>
+                            <li>Mascotas</li>
+                        </ul>
+                    </div>                
+                </div>
+
+                <!-- Información de la tienda -->
+                <div class="footer-info">
+                    <h3>Sobre PosteArt</h3>
+                    <p>Tu tienda online de pósters. Ofrecemos diseños exclusivos y originales.</p>
+                </div>
+
+                <!-- Información de contacto -->
+                <div class="footer-contact">
+                    <h3>Contacto</h3>
+                    <p>Email: PosteArt@gmail.com</p>
+                    <p>Teléfono: +57 3013442915</p>
+                </div>
             </div>
 
-            <!-- Información de la tienda -->
-            <div class="footer-info">
-                <h3>Sobre PosteArt</h3>
-                <p>Tu tienda online de pósters. Ofrecemos diseños exclusivos y originales.</p>
+            <div class="footer-bottom">
+                <p>&copy; 2025 PosteArt. Todos los derechos reservados.</p>
             </div>
-
-            <!-- Información de contacto -->
-            <div class="footer-contact">
-                <h3>Contacto</h3>
-                <p>Email: PosteArt@gmail.com</p>
-                <p>Teléfono: +57 3013442915</p>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <p>&copy; 2025 PosteArt. Todos los derechos reservados.</p>
-        </div>
-    </footer>
-</body>
+        </footer>
+    </body>
 </html>
