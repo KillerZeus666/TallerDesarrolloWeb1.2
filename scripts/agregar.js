@@ -1,3 +1,5 @@
+//localStorage.removeItem('productos');
+
 class Producto {
     constructor(nombre, dimensiones, resistencia, exclusividad, imagen, precio) {
         this.nombre = nombre;
@@ -9,7 +11,6 @@ class Producto {
         this.cantidad = 1;
     }
 }
-
 document.getElementById('add-item-form').addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -20,19 +21,30 @@ document.getElementById('add-item-form').addEventListener('submit', function(eve
     const imagen = document.getElementById('imagen').value.trim();
     const precio = parseFloat(document.getElementById('precio').value);
     
+    // Validación de campos
     if (!nombre || !dimensiones || !resistencia || !exclusividad || !imagen || isNaN(precio) || precio <= 0) {
         alert("Por favor, completa todos los campos correctamente.");
         return;
     }
 
+    // Validación del precio
+    if (precio < 1000) {
+        alert("El precio del artículo debe ser igual o mayor a 1.000.");
+        return; // Evita que se agregue el producto si el precio es menor a 1.000
+    }
+
+    // Crear nuevo producto
     const nuevoProducto = new Producto(nombre, dimensiones, resistencia, exclusividad, imagen, precio);
     console.log("Nuevo producto creado:", nuevoProducto);
     
+    // Llamada a la función para agregar el producto a la tienda y guardarlo en localStorage
     agregarProductoTienda(nuevoProducto);
     guardarProductoEnStorage(nuevoProducto);
     
+    // Limpiar el formulario después de agregar el producto
     document.getElementById('add-item-form').reset();
 });
+
 
 function agregarProductoTienda(producto) {
     const tienda = document.querySelector('.productos');
@@ -50,10 +62,11 @@ function agregarProductoTienda(producto) {
             </ul>
         </div>
         <div class="precio">
-            <p>$${producto.precio.toFixed(2)}</p>
+            <p>${formatearPrecio(producto.precio)}</p>
             <button class="agregar-carrito">Agregar al Carrito</button>
         </div>
     `;
+
     
     productoHTML.querySelector('.agregar-carrito').addEventListener('click', () => {
         console.log("Botón 'Agregar al Carrito' presionado para:", producto.nombre);
@@ -62,6 +75,12 @@ function agregarProductoTienda(producto) {
     
     tienda.appendChild(productoHTML);
 }
+
+function formatearPrecio(precio) {
+    // Redondea el precio a dos decimales y verifica si esos decimales son cero
+    return precio % 1 === 0 ? `$${precio.toFixed(0)}` : `$${precio.toFixed(2)}`;
+}
+
 
 function guardarProductoEnStorage(producto) {
     let productosGuardados = JSON.parse(localStorage.getItem('productos')) || [];
