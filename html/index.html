@@ -17,7 +17,6 @@
             <img src="../images/posteArt.png" alt="PosteArt Logo" class="logo">
             <h1>PosteArt</h1>
         </div>
-     <!-- Contenedor para el carrito -->
         <div class="cart-container" id="cart-container">
             <button id="cart-button">🛒 <span id="cart-count">0</span></button>
             <div id="cart-content" class="cart-content">
@@ -31,13 +30,11 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- Los productos se agregarán aquí -->
+                        <!-- Los productos se agregarán aquí dinámicamente -->
                     </tbody>
                 </table>
             </div>
         </div>
-        
-
     </header>
 
     <main>
@@ -57,160 +54,10 @@
         <section class="tienda">
             <h2>TIENDA</h2>
             <div class="productos">
-                <!-- Producto 1 -->
-                <div class="producto">
-                    <img src="../images/poster1.jpg" alt="Producto 1">
-                    <div class="info">
-                        <h3>Póster Stranger Things</h3>
-                        <ul>
-                            <li>Dimensiones: 40x60 cm</li>
-                            <li>Resistencia: Resistente al agua</li>
-                            <li>Exclusividad: Edición limitada</li>
-                        </ul>
-                    </div>
-                    <div class="precio">
-                        <p>$20.000</p>
-                        <button class="agregar-carrito" onclick="agregarAlCarrito(new Producto('Poster Stranger Things', '40x60', 'Resistente al agua', 'Edicion limitada', 'poster1.jpg', 20000))">Agregar al Carrito</button>
-                    </div>
-                </div>
-        
-                <!-- Producto 2 -->
-                <div class="producto">
-                    <img src="../images/poster2.jpg" alt="Producto 2">
-                    <div class="info">
-                        <h3>Póster Spiderman</h3>
-                        <ul>
-                            <li>Dimensiones: 50x70 cm</li>
-                            <li>Resistencia: Resistente a la humedad</li>
-                            <li>Exclusividad: Edición de coleccionista</li>
-                        </ul>
-                    </div>
-                    <div class="precio">
-                        <p>$60.000</p>
-                        <button class="agregar-carrito">Agregar al Carrito</button>
-                    </div>
-                </div>
-        
-                <!-- Producto 3 -->
-                <div class="producto">
-                    <img src="../images/poster3.jpg" alt="Producto 3">
-                    <div class="info">
-                        <h3>Póster Pulp Fiction</h3>
-                        <ul>
-                            <li>Dimensiones: 45x65 cm</li>
-                            <li>Resistencia: Protegido contra el desvanecimiento</li>
-                            <li>Exclusividad: Colección especial</li>
-                        </ul>
-                    </div>
-                    <div class="precio">
-                        <p>$25.000</p>
-                        <button class="agregar-carrito">Agregar al Carrito</button>
-                    </div>
-                </div>
-        
-                <!-- Producto 4 -->
-                <div class="producto">
-                    <img src="../images/poster4.jpg" alt="Producto 4">
-                    <div class="info">
-                        <h3>Póster AC DC</h3>
-                        <ul>
-                            <li>Dimensiones: 60x90 cm</li>
-                            <li>Resistencia: Resistente al agua y rayaduras</li>
-                            <li>Exclusividad: Edición numerada</li>
-                        </ul>
-                    </div>
-                    <div class="precio">
-                        <p>$25.000</p>
-                        <button class="agregar-carrito">Agregar al Carrito</button>
-                    </div>
-                </div>
-        
-                <!-- Producto 5 -->
-                <div class="producto">
-                    <img src="../images/poster5.jpg" alt="Producto 5">
-                    <div class="info">
-                        <h3>Póster Michael Jackson</h3>
-                        <ul>
-                            <li>Dimensiones: 55x80 cm</li>
-                            <li>Resistencia: Resistente al desgaste</li>
-                            <li>Exclusividad: Edición limitada</li>
-                        </ul>
-                    </div>
-                    <div class="precio">
-                        <p>$60.000</p>
-                        <button class="agregar-carrito">Agregar al Carrito</button>
-                    </div>
-                </div>
-        
-                <!-- Producto 6 -->
-                <div class="producto">
-                    <img src="../images/poster6.jpg" alt="Producto 6">
-                    <div class="info">
-                        <h3>Póster Mario Kart Deluxe</h3>
-                        <ul>
-                            <li>Dimensiones: 70x100 cm</li>
-                            <li>Resistencia: Resistente al agua y al sol</li>
-                            <li>Exclusividad: Solo 500 unidades disponibles</li>
-                        </ul>
-                    </div>
-                    <div class="precio">
-                        <p>$40.000</p>
-                        <button class="agregar-carrito">Agregar al Carrito</button>
-                    </div>
-                </div>
-        
-                <!-- Producto 7 -->
-                <div class="producto">
-                    <img src="../images/poster7.jpg" alt="Producto 7">
-                    <div class="info">
-                        <h3>Póster Terminator</h3>
-                        <ul>
-                            <li>Dimensiones: 40x50 cm</li>
-                            <li>Resistencia: Resistente a desvanecimiento</li>
-                            <li>Exclusividad: Edición especial</li>
-                        </ul>
-                    </div>
-                    <div class="precio">
-                        <p>$20.000</p>
-                        <button class="agregar-carrito">Agregar al Carrito</button>
-                    </div>
-                </div>
-        
-                <!-- Producto 8 -->
-                <div class="producto">
-                    <img src="../images/poster8.jpg" alt="Producto 8">
-                    <div class="info">
-                        <h3>Póster Los Juegos del Hambre</h3>
-                        <ul>
-                            <li>Dimensiones: 50x70 cm</li>
-                            <li>Resistencia: Resistente al agua</li>
-                            <li>Exclusividad: Edición limitada</li>
-                        </ul>
-                    </div>
-                    <div class="precio">
-                        <p>$45.000</p>
-                        <button class="agregar-carrito">Agregar al Carrito</button>
-                    </div>
-                </div>
-        
-                <!-- Producto 9 -->
-                <div class="producto">
-                    <img src="../images/poster9.jpg" alt="Producto 9">
-                    <div class="info">
-                        <h3>Póster La Casa de Papel</h3>
-                        <ul>
-                            <li>Dimensiones: 60x80 cm</li>
-                            <li>Resistencia: Resistente al desgaste</li>
-                            <li>Exclusividad: Edición numerada</li>
-                        </ul>
-                    </div>
-                    <div class="precio">
-                        <p>$20.000</p>
-                        <button class="agregar-carrito">Agregar al Carrito</button>
-                    </div>
-                </div>
+                <!-- Aquí se agregarán los productos dinámicamente -->
             </div>
         </section>
+
         <h2>AGREGAR ARTÍCULO</h2>
         <section class="agregar-articulo">
             <div class="form-wrapper">
@@ -219,66 +66,30 @@
                         <label for="nombre">Nombre del artículo</label>
                         <input type="text" id="nombre" placeholder="Nombre del artículo" required>
                     </div>
-        
                     <div class="form-group">
                         <label for="atributo1">Dimensiones</label>
                         <input type="text" id="atributo1" placeholder="40x60">
                     </div>
-        
                     <div class="form-group">
                         <label for="atributo2">Resistencia</label>
                         <input type="text" id="atributo2" placeholder="Agua">
                     </div>
-        
                     <div class="form-group">
                         <label for="atributo3">Exclusividad</label>
                         <input type="text" id="atributo3" placeholder="Edición especial">
                     </div>
-        
                     <div class="form-group">
-                        <label for="imagen">Imágen</label>
+                        <label for="imagen">Imagen</label>
                         <input type="url" id="imagen" placeholder="URL de la imagen" required>
                     </div>
-        
                     <div class="form-group">
                         <label for="precio">Precio</label>
-                        <input type="number" id="precio" placeholder="Precio" required>
+                        <input type="number" id="precio" placeholder="Precio...">
                     </div>
-        
-                    <div class="form-group button-group">
-                        <button type="submit">Agregar artículo</button>
-                    </div>
+                    <button type="submit">Agregar Producto</button>
                 </form>
             </div>
         </section>
-        
-        
     </main>
-
-    <footer>
-        <div class="footer-container">
-            <div class="footer-info">
-                <h3>PosteArt</h3>
-                <p>Arte único y personalizado a solo un clic.</p>
-            </div>
-            <div class="footer-links">
-                <h3>Síguenos</h3>
-                <a href="#" target="_blank">
-                    <img src="../images/facebook.png" alt="Facebook">
-                </a>
-                <a href="#" target="_blank">
-                    <img src="../images/instagram.png" alt="Instagram">
-                </a>
-            </div>
-            <div class="footer-contact">
-                <h3>Contacto</h3>
-                <p>Email: contacto@posteart.com</p>
-                <p>Tel: +57 300 123 4567</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 PosteArt. Todos los derechos reservados.</p>
-        </div>
-    </footer>
 </body>
 </html>
