@@ -6,77 +6,152 @@ class Producto {
         this.exclusividad = exclusividad;
         this.imagen = imagen;
         this.precio = precio;
+        this.cantidad = 1;
     }
 }
 
 document.getElementById('add-item-form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Evitar que se recargue la página
+    event.preventDefault();
 
-    // Obtener los valores del formulario
-    const nombre = document.getElementById('nombre').value;
-    const dimensiones = document.getElementById('atributo1').value;
-    const resistencia = document.getElementById('atributo2').value;
-    const exclusividad = document.getElementById('atributo3').value;
-    const imagen = document.getElementById('imagen').value;
+    const nombre = document.getElementById('nombre').value.trim();
+    const dimensiones = document.getElementById('atributo1').value.trim();
+    const resistencia = document.getElementById('atributo2').value.trim();
+    const exclusividad = document.getElementById('atributo3').value.trim();
+    const imagen = document.getElementById('imagen').value.trim();
     const precio = parseFloat(document.getElementById('precio').value);
+    
+    if (!nombre || !dimensiones || !resistencia || !exclusividad || !imagen || isNaN(precio) || precio <= 0) {
+        alert("Por favor, completa todos los campos correctamente.");
+        return;
+    }
 
-    // Crear un nuevo objeto Producto
     const nuevoProducto = new Producto(nombre, dimensiones, resistencia, exclusividad, imagen, precio);
-
-    // Llamar a la función para agregar el producto a la tienda
+    console.log("Nuevo producto creado:", nuevoProducto);
+    
     agregarProductoTienda(nuevoProducto);
-
-    // Guardar el producto en el localStorage
     guardarProductoEnStorage(nuevoProducto);
-
-    // Limpiar el formulario
+    
     document.getElementById('add-item-form').reset();
 });
 
-// Función para agregar el producto a la tienda
 function agregarProductoTienda(producto) {
-    const tienda = document.querySelector('.productos'); // Selecciona el contenedor de productos
+    const tienda = document.querySelector('.productos');
 
-    const nuevoProductoHTML = `
-        <div class="producto">
-            <img src="${producto.imagen}" alt="${producto.nombre}">
-            <div class="info">
-                <h3>${producto.nombre}</h3>
-                <ul>
-                    <li>Dimensiones: ${producto.dimensiones}</li>
-                    <li>Resistencia: ${producto.resistencia}</li>
-                    <li>Exclusividad: ${producto.exclusividad}</li>
-                </ul>
-            </div>
-            <div class="precio">
-                <p>$${producto.precio}</p>
-                <button class="agregar-carrito">Agregar al Carrito</button>
-            </div>
+    const productoHTML = document.createElement('div');
+    productoHTML.classList.add('producto');
+    productoHTML.innerHTML = `
+        <img src="${producto.imagen}" alt="${producto.nombre}">
+        <div class="info">
+            <h3>${producto.nombre}</h3>
+            <ul>
+                <li>Dimensiones: ${producto.dimensiones}</li>
+                <li>Resistencia: ${producto.resistencia}</li>
+                <li>Exclusividad: ${producto.exclusividad}</li>
+            </ul>
+        </div>
+        <div class="precio">
+            <p>$${producto.precio.toFixed(2)}</p>
+            <button class="agregar-carrito">Agregar al Carrito</button>
         </div>
     `;
-
-    // Agregar el nuevo producto al contenedor de productos
-    tienda.innerHTML += nuevoProductoHTML;
+    
+    productoHTML.querySelector('.agregar-carrito').addEventListener('click', () => {
+        console.log("Botón 'Agregar al Carrito' presionado para:", producto.nombre);
+        agregarAlCarrito(producto);
+    });
+    
+    tienda.appendChild(productoHTML);
 }
 
-// Función para guardar el producto en localStorage
 function guardarProductoEnStorage(producto) {
-    let productosGuardados = JSON.parse(localStorage.getItem('productos')) || []; // Obtener los productos guardados o un arreglo vacío si no hay
-
-    productosGuardados.push(producto); // Agregar el nuevo producto al arreglo
-
-    // Guardar el arreglo actualizado en el localStorage
+    let productosGuardados = JSON.parse(localStorage.getItem('productos')) || [];
+    productosGuardados.push(producto);
     localStorage.setItem('productos', JSON.stringify(productosGuardados));
+    console.log("Producto guardado en localStorage:", producto);
 }
 
-// Función para cargar los productos guardados al cargar la página
 function cargarProductosDesdeStorage() {
-    let productosGuardados = JSON.parse(localStorage.getItem('productos')) || []; // Obtener los productos guardados
+    let productosGuardados = JSON.parse(localStorage.getItem('productos')) || [];
+    console.log("Cargando productos desde localStorage:", productosGuardados);
+    productosGuardados.forEach(producto => agregarProductoTienda(producto));
+}
 
-    productosGuardados.forEach(producto => {
-        agregarProductoTienda(producto); // Mostrar cada producto en la tienda
+document.addEventListener('DOMContentLoaded', () => {
+    cargarProductosDesdeStorage();
+    actualizarCarritoDesdeStorage();
+});
+
+// --- Funciones del carrito ---
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+const cartButton = document.getElementById("cart-button");
+const cartCount = document.getElementById("cart-count");
+const cartContent = document.getElementById("cart-content tbody");
+const cartContainer = document.getElementById("carrito");
+
+function agregarAlCarrito(producto) {
+    let item = carrito.find(p => p.nombre === producto.nombre);
+    
+    if (item) {
+        item.cantidad++;
+    } else {
+        producto.cantidad = 1;
+        carrito.push(producto);
+    }
+    
+    console.log("Carrito actualizado:", carrito);
+    actualizarCarrito();
+}
+
+function actualizarCarrito() {
+    const cartContent = document.querySelector("#cart-content tbody");
+    const cartCount = document.getElementById("cart-count");
+    cartContent.innerHTML = ""; // Limpiar contenido antes de actualizar
+    
+    if (carrito.length === 0) {
+        cartCount.textContent = "0";
+        return; // Si el carrito está vacío, no hacemos nada más
+    }
+
+    carrito.forEach((producto, index) => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+            <td><img src="${producto.imagen}" width="50"></td>
+            <td>${producto.nombre}</td>
+            <td>$${producto.precio.toFixed(2)}</td>
+            <td>${producto.cantidad}</td>
+            <td><button onclick="eliminarDelCarrito(${index})">🗑</button></td>
+        `;
+        cartContent.appendChild(row);
+    });
+
+    cartCount.textContent = carrito.reduce((total, p) => total + p.cantidad, 0); // Mostrar cantidad total
+    localStorage.setItem("carrito", JSON.stringify(carrito)); // Guardar carrito actualizado
+    console.log("Carrito actualizado:", carrito);
+}
+
+
+function eliminarDelCarrito(index) {
+    console.log("Producto eliminado del carrito:", carrito[index]);
+    carrito.splice(index, 1);
+    actualizarCarrito();
+}
+
+cartButton.addEventListener("click", mostrarCarrito);
+
+function mostrarCarrito() {
+    cartContainer.innerHTML = "";
+    carrito.forEach(producto => {
+        const item = document.createElement("div");
+        item.innerHTML = `
+            <img src="${producto.imagen}" width="100">
+            <p><strong>${producto.nombre}</strong></p>
+            <p>Precio: $${producto.precio.toFixed(2)}</p>
+            <p>Cantidad: ${producto.cantidad}</p>
+            <hr>
+        `;
+        cartContainer.appendChild(item);
     });
 }
 
-// Cargar los productos desde localStorage cuando se carga la página
-document.addEventListener('DOMContentLoaded', cargarProductosDesdeStorage);
+document.addEventListener("DOMContentLoaded", actualizarCarrito);

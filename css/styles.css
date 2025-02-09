@@ -186,17 +186,21 @@ footer {
     gap: 8px;  /* Espacio entre el precio y el botón */
 }
 
-/* Add to Cart Button */
+
+
+
+/* Botón de agregar al carrito */
 .agregar-carrito {
     background: #ff5722;
     color: white;
     border: none;
-    padding: 8px 12px;  /* Reduce el tamaño del botón */
+    padding: 8px 12px;
     border-radius: 5px;
     cursor: pointer;
     transition: 0.3s;
-    font-size: 14px;  /* Ajusta el tamaño del texto en el botón */
-    margin: 0 auto;  /* Esto centra el botón dentro de su contenedor */
+    font-size: 14px;
+    display: block;
+    margin: 10px auto;
 }
 
 .agregar-carrito:hover {
