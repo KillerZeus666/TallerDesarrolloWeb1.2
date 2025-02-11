@@ -185,17 +185,30 @@ input, button {
     background: #ff5722;
     color: white;
     border: none;
-    padding: 8px 12px;
-    border-radius: 5px;
+    padding: 12px 20px;
+    border-radius: 30px;
     cursor: pointer;
-    transition: 0.3s;
-    font-size: 14px;
+    transition: 0.3s ease-in-out;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     display: block;
     margin: 10px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1);
 }
 
+/* Efecto hover */
 .agregar-carrito:hover {
     background: #e64a19;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.agregar-carrito:active {
+    background: #d84315;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 
