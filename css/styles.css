@@ -345,7 +345,7 @@ footer {
 }
 
 .footer-bottom {
-    background-color: #222;
+    background-color:linear-gradient(to right, #00b09b, #96c93d);
     text-align: center;
     padding: 10px 0;
     margin-top: 20px;
